@@ -1,5 +1,7 @@
 import React, { Component} from 'react'
 
+import HideMe from "./hide-me"
+
 
 export default class AlignPage extends Component {
    constructor(props) {
@@ -11,16 +13,34 @@ export default class AlignPage extends Component {
    }
 
    render() {
-       return (
+       return (  
            <div className='nav-page'>
                <div><h1>Align Me!</h1></div>
+
+
 
                <button>Left</button>
                <button>Center</button>
                <button>Right</button>
 
+               <div className="underline"></div>
 
-           </div>
-       )
+               <HideMe/>
+
+
+
+
+            </div>
+               
+
+
+
+
+
+
+
+
+
+        )
    }
 }
