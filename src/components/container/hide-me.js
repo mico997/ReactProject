@@ -1,4 +1,5 @@
 import React, { Component} from 'react'
+import FontSize from './font-size'
 
 export default class HideMe extends Component {
    constructor(props) {
@@ -22,6 +23,10 @@ export default class HideMe extends Component {
                <h2 style={{visibility: this.state.visibleContent}}>Hide Me!</h2>
 
                <button onClick={() => this.state.visibleContent === "visible" ? this.hideContent("hidden") : this.hideContent("visible") }>Hide</button>
+
+
+
+               <FontSize />
 
 
 
