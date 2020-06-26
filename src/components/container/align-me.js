@@ -8,20 +8,26 @@ export default class AlignPage extends Component {
         super(props)
 
          this.state = {
+             alignment: "left"
               
           }
+          this.changeAlignment = this.changeAlignment.bind(this)
+   }
+
+   changeAlignment(newAlignment) {
+       this.setState({alignment: newAlignment })
    }
 
    render() {
        return (  
            <div className='nav-page'>
-               <div><h1>Align Me!</h1></div>
+               <div><h1 style={{textAlign: this.state.alignment}}>Align Me!</h1></div>
 
 
 
-               <button>Left</button>
-               <button>Center</button>
-               <button>Right</button>
+               <button onClick={() => this.changeAlignment("left")}>Left</button>
+               <button onClick={() => this.changeAlignment("center")}>Center</button>
+               <button onClick={() => this.changeAlignment("right")}>Right</button>
 
                <div className="underline"></div>
 
