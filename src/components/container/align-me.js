@@ -3,7 +3,7 @@ import React, { Component} from 'react'
 import HideMe from "./hide-me"
 
 
-export default class AlignPage extends Component {
+export default class AlignMe extends Component {
    constructor(props) {
         super(props)
 
