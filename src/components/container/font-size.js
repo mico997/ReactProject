@@ -1,5 +1,7 @@
 import React, { Component} from 'react'
 
+import ColorMe from "./color"
+
 export default class FontSize extends Component {
    constructor(props) {
         super(props)
@@ -23,6 +25,9 @@ export default class FontSize extends Component {
                <h1 >0</h1>
 
                <button>Down</button>
+
+        <ColorMe/>
+
                 
            </div>
        )
