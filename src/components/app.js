@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-
-import AlignMe from "./container/align-me";
-import HideMe from "./container/hide-me";
-import FontSize from "./container/font-size";
-import ColorMe from "./container/textResizer";
-
+import Alignment from "./container/alignment"
+import Toggle from "./container/toggle"
+import Counter from "./container/counter"
+import TextResizer from "./container/textResizer"
+import Color from "./container/color"
+import Clock from "./container/clock"
 
 export default class App extends Component {
   render() {
     return (
       <div className='app'>
-          <Router>
-            <div>
-
-              <AlignMe/>
-
-
-
-            </div>
-            
-
-          
-
-          </Router>
+        <Alignment />
+        <hr/>
+        <Toggle />
+        <hr/>
+        <Counter />
+        <hr/>
+        <TextResizer />
+        <hr/>
+        <Color />
+        <hr/>
+        <Clock />
       </div>
     );
   }
-}
+} 
