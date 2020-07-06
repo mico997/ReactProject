@@ -66,29 +66,15 @@
 //    }
 // }
 
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class Toggle extends Component {
-   constructor(props) {
-       super(props)
+export default function toggleVisibility() {
+    const [visible , updateVisibility ] = useState("visible")
 
-       this.state = {
-           visible: true
-       }
-
-       this.handleToggle = this.handleToggle.bind(this)
-   }
-
-   handleToggle(invisible) {
-       this.setState({ visible: invisible})
-   }
-
-   render() {
-       return (
-           <div className='toggle-wrapper'>
-               <h3 style={{ visibility: this.state.visible }}>Hide Me!</h3>
-               <button onClick={() => this.state.visible === "visible" ? this.handleToggle("hidden") : this.handleToggle("visible")}>Toggle visibility</button>
-           </div>
-       )
-   }
+    return (
+        <div className='toggle-wrapper'>
+            <h3 style={{ visibility: visible }}>Hide Me!</h3>
+            <button onClick={() => visible === "visible" ? updateVisibility("hidden") : updateVisibility("visible")}>Toggle visibility</button>
+        </div>
+    )
 }

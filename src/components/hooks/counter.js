@@ -31,35 +31,32 @@
 //    }
 // }
 
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class Counter extends Component {
-   constructor(props) {
-       super(props)
+export default function Counter() {
 
-       this.state = {
-           count: 0
-       }
+    const [count, updateCount] = useState(0);
 
-       this.handleChange = this.handleChange.bind(this)
-   }
 
-   handleChange(direction) {
-       if (direction === "+") {
-            this.setState({ count: this.state.count + 1 })
+    const countChange = (handleChange) => {
+        if (onClick === "up") {
+            updateCount({ count: count + 1 })
        }
        else {
-            this.setState({ count: this.state.count - 1 })
+            updateCount({ count: count - 1 })
        }
-   }
+    }
+   
 
-   render() {
-       return (
-           <div className='counter-wrapper'>
-               <button onClick={() => this.handleChange("+")}>Up</button>
-               <h3>{this.state.count}</h3>
-               <button onClick={() => this.handleChange("-")}>Down</button>
-           </div>
-       )
-   }
+  
+
+    return (
+        <div className='counter-wrapper'>
+            <button onClick={() => countChange()}>Up</button>
+            <h3>{count}</h3>
+            <button onClick={() => countChange()}>Down</button>
+        </div>
+    )
 }
+
+

@@ -43,61 +43,45 @@
 //    }
 // }
 
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class Color extends Component {
-   constructor(props) {
-       super(props)
+export default function Color() {
+    const [startingColor,  updateColor] = useState("black")
 
-       this.state = {
-           text: "Color Me!",
-           color: "black",
-           textInputValue: "Color Me!",
-           colorInputValue: "black"
-       }
 
-       this.handleInputChange = this.handleInputChange.bind(this)
-       this.handleSubmit = this.handleSubmit.bind(this)
-       this.handleKeyPress = this.handleKeyPress.bind(this)
-   }
 
-   handleInputChange(event) {
-       this.setState({ [event.target.name]: event.target.value })
-   }
 
-    handleSubmit() {
-        this.setState({
-            text: this.state.textInputValue,
-            color: this.state.colorInputValue
-        })
+    const colorChange = (handleColorInputChange) => {
+        useState({ colorInputValue: useState.updateColor })
+
     }
 
-    handleKeyPress(event) {
-        if (event.key === "Enter") {
-            this.handleSubmit()
-        }
-    }
 
-   render() {
+       
+
+
+
+  
+
+   
        return (
            <div className='color-wrapper'>
-               <h3 style={{ color: this.state.color }}>{this.state.text}</h3>
+               <h3 style={{ color: startingColor }}>{text}</h3>
                <input 
                     type="text" 
                     name="textInputValue" 
-                    onChange={this.handleInputChange}
-                    onKeyPress={this.handleKeyPress} 
-                    value={this.state.textInputValue} 
+                    onChange={handleInputChange}
+                    onKeyPress={handleKeyPress} 
+                    value={textInputValue} 
                 />
                <input 
                     type="text" 
                     name="colorInputValue" 
-                    onChange={this.handleInputChange} 
-                    onKeyPress={this.handleKeyPress} 
-                    value={this.state.colorInputValue} 
+                    onChange={handleInputChange} 
+                    onKeyPress={handleKeyPress} 
+                    value={colorInputValue} 
                 />
                <button onClick={this.handleSubmit}>Submit</button>
            </div>
        )
-   }
 }
